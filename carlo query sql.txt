@@ -22,3 +22,11 @@ Mostro le righe 0 - 24 (38 del totale, La query ha impiegato 0,0015 secondi.)
 
 
 Selezionare tutti gli eventi di dicembre 2023 (25)
+
+SELECT * FROM events WHERE YEAR(start) = 2023 AND MONTH(start) = 12; 
+
+Mostro le righe 0 - 24 (25 del totale, La query ha impiegato 0,0013 secondi.)
+
+
+Selezionare tutti gli eventi con una durata maggiore alle 2 ore (823) 
+
