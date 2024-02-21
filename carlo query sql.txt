@@ -1,0 +1,24 @@
+1.Selezionare tutti gli eventi gratis, cioè con prezzo nullo (19)
+
+SELECT * FROM events WHERE price IS NULL; 
+
+Mostro le righe 0 - 18 (19 del totale, La query ha impiegato 0,0013 secondi.)
+
+
+
+2.Selezionare tutte le location in ordine alfabetico (82)
+
+SELECT * FROM locations ORDER BY name; 
+
+Mostro le righe 0 - 24 (82 del totale, La query ha impiegato 0,0006 secondi.) [name: ALCHIMIA DEI SAPORI... - CAFFÈ DEL MATTINO...] 
+
+
+
+Selezionare tutti gli eventi che costano meno di 20 euro e durano meno di 3 ore (38)
+
+SELECT * FROM events WHERE price < 20 AND duration < TIME('03:00:00'); 
+
+Mostro le righe 0 - 24 (38 del totale, La query ha impiegato 0,0015 secondi.) 
+
+
+Selezionare tutti gli eventi di dicembre 2023 (25)
