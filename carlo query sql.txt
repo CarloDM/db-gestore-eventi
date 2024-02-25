@@ -30,3 +30,37 @@ Mostro le righe 0 - 24 (25 del totale, La query ha impiegato 0,0013 secondi.)
 
 Selezionare tutti gli eventi con una durata maggiore alle 2 ore (823) 
 
+SELECT * FROM events WHERE duration > TIME('02:00:00'); 
+
+
+Selezionare tutti gli eventi, mostrando nome, data di inizio, ora di inizio, ora di fine e
+durata totale (1040)
+
+SELECT name, DATE(start), TIME(start), TIME( TIME(start) + TIME(duration)) FROM events; 
+
+
+Selezionare tutti gli eventi aggiunti da “Fabiano Lombardo” (id: 1202) (132)
+
+SELECT * FROM events WHERE user_id = 1202; 
+
+
+Selezionare il numero totale di eventi per ogni fascia di prezzo (81)
+
+SELECT price, COUNT(*) AS total_events FROM events GROUP BY price ORDER BY `events`.`price` ASC 
+
+
+
+Selezionare tutti gli utenti admin ed editor (9)
+
+SELECT * FROM `users` WHERE role_id = 1 OR role_id = 2; 
+
+
+
+Selezionare tutti i concerti (eventi con il tag “concerti”) (72)
+
+SELECT * FROM events JOIN event_tag ON events.id = event_tag.event_id WHERE event_tag.tag_id = 1; 
+
+
+Selezionare tutti i tag e il prezzo medio degli eventi a loro collegati (11)
+
+
